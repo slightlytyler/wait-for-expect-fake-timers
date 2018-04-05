@@ -1,5 +1,14 @@
 import React from "react";
-import debounce from "lodash.debounce";
+
+const debounce = (fn, delay) => {
+  let timer = null;
+  return (...args) => {
+    clearTimeout(timer);
+    timer = setTimeout(() => {
+      fn.apply(this, args);
+    }, delay);
+  };
+};
 
 const SOME_EMOJIS = {
   apple: "🍎",

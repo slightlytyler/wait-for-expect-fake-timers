@@ -4,7 +4,7 @@ import "react-testing-library/extend-expect";
 import SlowSearchBox from "./SlowSearchBox";
 
 // This test fails without fake timers due to long debounce.
-// It passes if you lower the debounce and remove the fake timers.
+// It passes if you remove `wait`
 // Would be awesome if we could keep using fake timers AND wait ^^
 jest.useFakeTimers();
 
